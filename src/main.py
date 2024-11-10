@@ -85,7 +85,7 @@ class JSONSaver(ABC):
 
     @abstractmethod
     def delete_vacancy(self, words_del):
-        """Метод для удаления не нужного файла"""
+        """Метод для удаления ненужного файла"""
         pass
 
 
@@ -117,7 +117,7 @@ class HHVacancy(JSONSaver):
                     json.dump(json_data, file, indent=4, ensure_ascii=False)
 
     def delete_vacancy(self, words_del):
-        """Метод для удаления не нужных данных из файла"""
+        """Метод для удаления ненужных данных из файла"""
         data_1 = []
         if os.path.exists(self.get_file_name()):
             with open(self.get_file_name(), 'r', encoding="utf-8") as file:
